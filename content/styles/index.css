@@ -1,0 +1,150 @@
+:root{
+    --content: " ";
+  }
+
+.container {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--color_2);
+	font-family: nocturne-serif;
+}
+
+.blocks {
+	display: flex;
+	font-size: 9vw;
+	color: var(--color_1);
+    z-index: 11;
+}
+
+.s_blocks {
+	display: flex;
+	font-size: 2.5vw;
+	color: var(--color_1);
+    z-index: 10;
+}
+
+.circle-shape {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: min(97%,55rem);
+	height: min(97%,55rem);
+	border: 1px solid var(--color_3);;
+	border-radius: 100%;
+}
+
+.circle-shape-2 {
+	position: absolute;
+	top: 64%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+	width: 15rem;
+	height: 15rem;
+	background: var(--color_3);
+	border-radius: 100%;
+}
+
+.circle-shape-3 {
+	position: absolute;
+	top: 30%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+	width: 10rem;
+	height: 10rem;
+	background: var(--color_3);
+	border-radius: 100%;
+	z-index: 2;
+}
+
+
+.wrapper-img {
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	right: 18%;
+	width: 30%;
+	height: 65vh;
+    background-size: cover; 
+    background-position: center;
+}
+
+.wrapper-img::before {
+    pointer-events:none;
+	content:var(--content);
+    font-size: 2.5vw;
+    transition: all 0.8s ease 0s;
+    opacity: 1;
+	border: 1px solid var(--color_2)
+	
+}
+
+.block-1:hover, .block-2:hover, .block-4:hover{
+    color:var(--color_2);
+    text-shadow: -1px -1px 0 var(--color_1), 1px -1px 0 var(--color_1), -1px 1px 0 var(--color_1), 1px 1px 0 var(--color_1);
+    transition: all 0.2s ease 0s;
+}
+
+.hover_string {
+	opacity: 1;
+	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
+	transition: all 0.4s;
+}
+
+.img_div {
+	height: 100%;
+	object-fit: cover;
+}
+
+
+.box {
+	background: var(--color_2);
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.m_blocks{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .blocks {
+        display: none;
+    }
+
+    .circle-shape-2, .circle-shape-3 {
+        width: 8rem;
+	    height: 8rem;
+    }
+
+    .wrapper-img {
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 50vh;
+    }
+
+    .m_blocks{
+        display: block;
+        position: absolute;
+        bottom: 10vh;
+        left: 10vw;
+        font-size: 10vw;
+    }
+
+    .wrapper-img::before {
+        content:" ";
+    }
+
+}
